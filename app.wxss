@@ -1,0 +1,7 @@
+/**app.wxss**/
+@import "./iconfont/iconfont.wxss";
+@import "./utils/weui.wxss";
+
+page {
+    background-color: #F5F6F7;
+}

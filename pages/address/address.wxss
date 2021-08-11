@@ -1,0 +1,56 @@
+/* pages/address/address.wxss */
+input {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 28rpx;
+    margin-left: 10rpx;
+}
+
+.add {
+    width: 300rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: center;
+    border: 1px solid #b2b2b2;
+    margin: 0 auto;
+    margin-top: 50rpx;
+}
+
+.name,
+.phone,
+.area,
+.site {
+    font-size: 32rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+    border-bottom: 1px solid #e2e2e2;
+}
+
+.name input {
+    margin-left: 40rpx;
+}
+
+.area {
+    position: relative;
+}
+
+.area .section {
+    position: absolute;
+    top: 0rpx;
+    left: 140rpx;
+}
+
+.area .section .picker {
+    font-size: 32rpx;
+    color: #b2b2b2;
+}
+
+.address {
+    width: 90%;
+    margin: 0 auto;
+    background-color: #fff;
+    margin-top: 20rpx;
+    border-radius: 15rpx;
+}

@@ -1,0 +1,56 @@
+.site {
+    margin-top: 10rpx;
+    padding: 20rpx;
+    height: 130rpx;
+    position: relative;
+    background-color: #fff;
+    margin-bottom: 20rpx;
+}
+
+.site image {
+    width: 40rpx;
+    height: 40rpx;
+    position: absolute;
+    top: 46rpx;
+    left: 20rpx;
+}
+
+.site .pay_content {
+    margin: 0px 60rpx;
+}
+
+.site image.iconArrow {
+    left: auto;
+    top: 40rpx;
+    right: 40rpx;
+}
+
+.site .dw {
+    font-size: 24rpx;
+    color: #BBBBBB;
+}
+
+.site .change {
+    float: right;
+}
+
+.site .select {
+    float: left;
+}
+
+.site .compile {
+    margin: 10rpx;
+}
+
+.site .del {
+    margin: 10rpx;
+}
+
+.add {
+    width: 300rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: center;
+    border: 1px solid #b2b2b2;
+    margin: 0 auto;
+}

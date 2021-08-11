@@ -1,0 +1,63 @@
+<!--pages/search/search.wxml-->
+<view class="app-search-head">
+    <view class="app-search-head-input">
+        <view class="app-search">
+            <view class="search-item">
+                <view class="iconfont icon icon-sousuo"></view><input type="text" value="{{shoopingtext}}"
+                    bindinput="shoppinginput" placeholder="搜索商品" />
+                <view class="iconfont icon2 icon-cuo" bindtap="del"></view>
+                <view class="sousuo" bindtap="search"> <text>搜索</text> </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="commonTitle">
+    <text>搜索列表</text>
+</view>
+<view class="goodslist" wx:for="{{goodsList}}" wx:key="*this" wx:if="{{shoopingtext.length}}">
+    <view class="left">
+        <image src="{{item.goodsImage}}"></image>
+    </view>
+    <navigator class="right" url="/pages/details/details?id={{item.id}}" hover-class="none">
+        <view>
+            <view class="goods_name">
+                <text>{{item.goodsName}}</text>
+            </view>
+            <view class="goods_address">
+                <text>{{item.goodsAddress}}</text>
+            </view>
+            <view class="goods_price">
+                <text>￥{{item.goodsPrice}}</text>
+            </view>
+            <view class="car">
+                <image src="/images/car.png"></image>
+            </view>
+        </view>
+    </navigator>
+</view>
+
+
+<view class="common" wx:if="{{!shoopingtext.length}}">
+    <text>推荐列表</text>
+</view>
+<view class="goodslist" wx:for="{{tjgoodsList}}" wx:key="*this" wx:if="{{!shoopingtext.length}}">
+    <view class="left">
+        <image src="{{item.goodsImage}}"></image>
+    </view>
+    <navigator class="right" url="/pages/details/details?id={{item.id}}" hover-class="none">
+        <view>
+            <view class="goods_name">
+                <text>{{item.goodsName}}</text>
+            </view>
+            <view class="goods_address">
+                <text>{{item.goodsAddress}}</text>
+            </view>
+            <view class="goods_price">
+                <text>￥{{item.goodsPrice}}</text>
+            </view>
+            <view class="car">
+                <image src="/images/car.png"></image>
+            </view>
+        </view>
+    </navigator>
+</view>

@@ -1,0 +1,46 @@
+<!--pages/category/category.wxml-->
+
+<navigator url="/pages/search/search" hover-class="none">
+    <view class="header">
+        <view class="search">
+            <text>搜索商品名称</text>
+        </view>
+    </view>
+</navigator>
+
+
+<!-- <scroll-view class="categoryItem" scroll-y="true" style="height:{{scrollHeight}}px"> -->
+<!-- 1. 触发事件 bindtap 数据传参在data-*中设置 -->
+<scroll-view class="categoryItem" scroll-y="true">
+    <view class="item">
+        <view wx:for="{{categoryItem}}" wx:key="*this" class="{{ index == num ?'con':'' }}" data-id="{{index}}"
+            bindtap="setIndex">
+            {{item.name}}
+        </view>
+    </view>
+</scroll-view>
+
+<!-- 右侧内容 -->
+<!-- <scroll-view class="contentItem" scroll-y="true" style="height:{{scrollHeight}}px"> -->
+<scroll-view class="contentItem" scroll-y="true">
+
+    <scroll-view class="classify" scroll-x="true">
+        <view wx:for="{{catrgoryContent[num].cat}}" class="{{ index == num2 ?'con':'' }}" wx:key="*this"
+            bindtap="setNum" data-id="{{index}}">
+            {{item.cat_name}}
+        </view>
+    </scroll-view>
+
+    <view class="content">
+        <view class="ul">
+
+            <view class="li" wx:for="{{content[num].cat[num2].children}}" wx:key="*this">
+                <navigator url="/pages/cateList/cateList?id={{item.cat_id}}" hover-class="none">
+                    <image src="{{item.cat_icon}}"></image>
+                    <text>{{item.cat_name}}</text>
+                </navigator>
+            </view>
+
+        </view>
+    </view>
+</scroll-view>

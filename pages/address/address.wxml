@@ -1,0 +1,36 @@
+<view class="address">
+
+  <view class="name">
+    <text>收货人</text>
+    <input model:value="{{name}}" class="input1" type="text" placeholder="请输入收货人姓名" bindinput="getMsg"
+      data-model="name"></input>
+  </view>
+
+  <view class="phone">
+    <text>手机号码</text>
+    <input model:value="{{phone}}" type="text" placeholder="请输入手机号码" bindinput="getMsg" data-model="phone"></input>
+  </view>
+  <view class="area">
+    <text>所在地区</text>
+    <!-- <input type="text" placeholder="请输入所在地区" bindinput="getMsg" data-model="area"></input> -->
+
+    <view class="section">
+      <picker mode="region" bindchange="bindRegionChange" value="region">
+        <view class="picker">
+          {{region[0]}}，{{region[1]}}，{{region[2]}}
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class="site">
+    <text>详细地址</text>
+    <input model:value="{{area}}" type="text" placeholder="请输入详细地址" bindinput="getMsg" data-model="site"></input>
+  </view>
+
+  <navigator url="/pages/site/site" hover-class="none">
+    <view class="add" bindtap="add">
+      + 完成添加
+    </view>
+  </navigator>
+
+</view>

@@ -1,0 +1,67 @@
+<!--pages/details/details.wxml-->
+<!-- 轮播图 -->
+<view class="banner">
+    <swiper indicator-dots indicator-color="#fff" indicator-active-color="#007AAE" autoplay style="height:375px">
+        <!-- wx:for 默认里面 item 对象 index 下标 -->
+        <block wx:for="{{goods.goodsImgs}}" wx:key="*this">
+            <swiper-item>
+                <image mode="widthFix" src="{{item.pics_big}}"></image>
+            </swiper-item>
+        </block>
+    </swiper>
+</view>
+
+<!-- 商品详情 -->
+<view class="goods_info">
+    <view class="goods_title">
+        <view class="title">
+            {{goods.goodsName}}
+        </view>
+        <view class="collect" wx:if="{{!isCollect}}" bindtap="collect">
+            <image src="/images/icon-aixin1.png"></image>
+            <text>未收藏</text>
+        </view>
+        <view class="collect" wx:elif="{{isCollect}}" bindtap="collect">
+            <image src="/images/icon-aixin.png"></image>
+            <text>已收藏</text>
+        </view>
+    </view>
+    <view class="goods_price">
+        <text>￥{{goods.goodsPrice}}</text>
+        <text class="old">￥{{goods.goodsPriceOld}}</text>
+    </view>
+    <view class="bottom">
+        *本产品由 某品牌商发货
+    </view>
+</view>
+<!-- 商品详情 -->
+<view class="content">
+    <view class="title">商品详情</view>
+    <!-- <image mode="widthFix" src="{{goods.goodsDetails}}"></image> -->
+    <view>
+
+        <rich-text nodes="{{goods.goodsDetails}}"></rich-text>
+    </view>
+</view>
+
+
+<!-- 底部导航 -->
+<view class="bottomNav">
+    <view class="ul">
+        <view class="li" bindtap="goCart">
+            <view class="cart">
+                <image src="/images/car.png"></image>
+                <view class="num">{{num}}</view>
+            </view>
+        </view>
+        <view class="li" bindtap="goHome">
+            前往商城
+        </view>
+        <view class="li" bindtap="setCart">
+            加入购物车
+        </view>
+        <view class="li" bindtap="setPay">
+            前往支付
+        </view>
+    </view>
+</view>

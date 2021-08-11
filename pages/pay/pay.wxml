@@ -1,0 +1,46 @@
+<!--pages/pay/pay.wxml-->
+<view class="address">
+    <view class="pay_content" wx:if="{{haveSite == true}}">
+        <image src="/images/icon-dw.png" class="iconAddress"></image>
+        <view class="name">
+            <text>{{site.name}}</text>
+            <text>{{site.phone}}</text>
+        </view>
+        <view class="dw">
+            {{site.area}}{{site.site}}
+        </view>
+        <image src="/images/icon-arrow.png" class="iconArrow" bindtap="goAddress"></image>
+    </view>
+    <view class="noSite" wx:if="{{haveSite == false}}">
+        <text>当前没有地址,请前往添加</text>
+        <image src="/images/icon-arrow.png" class="iconArrow" bindtap="goAddress"></image>
+    </view>
+
+</view>
+
+<view class="goodslist" wx:for="{{goodsList}}" wx:key="*this">
+
+    <view class="left">
+        <image src="{{item.goodsImage}}"></image>
+    </view>
+
+    <view class="right">
+        <view class="goods_name">
+            <text>{{item.goodsName}}</text>
+        </view>
+        <view class="goods_price">
+            <text>￥{{item.goodsPrice}}</text>
+        </view>
+        <view class="goods_num">
+            <text>x{{item.num}}</text>
+        </view>
+    </view>
+</view>
+
+<!-- 底部导航 -->
+<view class="bottomNav">
+    <view class="warp">
+        总价格：<text>￥{{totalData}}</text>
+        <view class="order" bindtap="goOrder">支付</view>
+    </view>
+</view>

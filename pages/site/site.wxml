@@ -1,0 +1,33 @@
+<!--pages/site/site.wxml-->
+<!-- <text>pages/site/site.wxml</text> -->
+
+<radio-group bindchange="radioChange">
+    <view class="site" wx:for="{{msg}}" wx:key="*this">
+        <image src="/images/icon-dw.png" class="iconAddress"></image>
+        <view class="pay_content">
+            <view class="name">
+                <text>{{item.name}}</text>
+                <text>{{item.phone}}</text>
+            </view>
+            <view class="dw">
+                {{item.area}} {{item.site}}
+            </view>
+        </view>
+        <!-- <image src="/images/icon-arrow.png" class="iconArrow"></image> -->
+
+        <view class="select">
+            <radio value="{{item.value}}" checked="{{item.checked}}" value="{{item.index}}"
+                style="transform: scale(0.7)" />
+            <text wx:if="{{item.checked == true}}">默认</text>
+        </view>
+
+        <view class="change">
+            <text class="compile" bindtap="compile" data-index="{{item.index}}">编辑</text>
+            <text class="del" bindtap="del" data-index="{{item.index}}">删除</text>
+        </view>
+    </view>
+</radio-group>
+
+<view class="add" bindtap="geAddress">
+    + 添加地址
+</view>
